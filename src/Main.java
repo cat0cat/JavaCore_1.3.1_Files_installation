@@ -9,23 +9,24 @@ public class Main {
 
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder();
+        String path = "D:" + File.separator + "Games(netology)" + File.separator;
         List<File> folders = Arrays.asList(
-                new File("D:\\Games(netology)\\"),
-                new File("D:\\Games(netology)\\src"),
-                new File("D:\\Games(netology)\\res"),
-                new File("D:\\Games(netology)\\savegames"),
-                new File("D:\\Games(netology)\\temp"),
-                new File("D:\\Games(netology)\\src\\main"),
-                new File("D:\\Games(netology)\\src\\test"),
-                new File("D:\\Games(netology)\\res\\drawables"),
-                new File("D:\\Games(netology)\\res\\vectors"),
-                new File("D:\\Games(netology)\\res\\icons")
+                new File(path),
+                new File(path + "src"),
+                new File(path + "res"),
+                new File(path + "savegames"),
+                new File(path + "temp"),
+                new File(path + "src" + File.separator + "main"),
+                new File(path + "src" + File.separator + "test"),
+                new File(path + "res" + File.separator + "drawables"),
+                new File(path + "res" + File.separator + "vectors"),
+                new File(path + "res" + File.separator + "icons")
         );
 
         List<File> files = Arrays.asList(
-                new File("D:\\Games(netology)\\src\\main\\Main.java"),
-                new File("D:\\Games(netology)\\src\\main\\Utils.java"),
-                new File("D:\\Games(netology)\\temp\\temp.txt")
+                new File(path + "src" + File.separator + "main" + File.separator + "Main.java"),
+                new File(path + "src" + File.separator + "main" + File.separator + "Utils.java"),
+                new File(path + "temp" + File.separator + "temp.txt")
         );
 
         //создание директорий
@@ -53,7 +54,7 @@ public class Main {
         });
 
         // добавление в лог информации о создании файлов и каталогов.
-        try (FileWriter log = new FileWriter("D:\\Games(netology)\\temp\\temp.txt")) {
+        try (FileWriter log = new FileWriter(path + "temp" + File.separator + "temp.txt")) {
             log.write(sb.toString());
             log.flush();
         } catch (IOException e) {
